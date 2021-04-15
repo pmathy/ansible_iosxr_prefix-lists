@@ -1,0 +1,7 @@
+---
+- hosts: cores
+  gather_facts: no
+  tasks:
+    - name: Configure k1 core prefix lists
+      include_role: 
+        name: "./ansible/roles/configure_xr_prefix_lists"

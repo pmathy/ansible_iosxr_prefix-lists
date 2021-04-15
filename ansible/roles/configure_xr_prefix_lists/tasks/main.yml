@@ -1,0 +1,15 @@
+---
+- name: IOS-XR Cores Configuration Tasks
+
+  block:
+    - name: Include vars for this role (xr_prefix_lists)
+      include_vars:
+        file: vars.yml
+        name: xr_prefix_lists
+
+    - name: Configure Prefix-Set "{{ item.key }}"
+      cisco.iosxr.iosxr_config:
+        lines:
+          - "{{ item.value }}"
+        parents: prefix-set "{{ item.key }}"
+      loop: "{{ xr_prefix_lists.prefix_sets }}"
