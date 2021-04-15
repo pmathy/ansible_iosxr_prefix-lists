@@ -1,5 +1,5 @@
 prefix_sets:
-  VRF-CE1A-OSPF2BGP:
+  VRF_CE1A_OSPF2BGP:
     - "0.0.0.0/0 le 32"
-  VRF-CE2A-OSPF2BGP:
+  VRF_CE2A_OSPF2BGP:
     - "9.9.9.9/32"
