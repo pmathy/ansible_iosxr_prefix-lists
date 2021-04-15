@@ -7,9 +7,9 @@
         file: vars.yml
         name: xr_prefix_lists
 
-    - name: Configure Prefix-Set "{{ item.key }}"
+    - name: Configure Prefix-Set {{ item.key }}
       cisco.iosxr.iosxr_config:
         lines:
-          - "{{ item.value }}"
-        parents: prefix-set "{{ item.key }}"
+          - {{ item.value }}
+        parents: prefix-set {{ item.key }}
       loop: "{{ xr_prefix_lists.prefix_sets | dict2items }}"
