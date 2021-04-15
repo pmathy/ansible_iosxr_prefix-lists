@@ -12,4 +12,4 @@
         lines:
           - "{{ item.value }}"
         parents: prefix-set "{{ item.key }}"
-      loop: "{{ xr_prefix_lists.prefix_sets }}"
+      loop: "{{ xr_prefix_lists.prefix_sets | dict2items }}"
