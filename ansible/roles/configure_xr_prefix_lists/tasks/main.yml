@@ -10,13 +10,13 @@
     - name: Configure Prefix-Set VRF-CE1A-OSPF2BGP
       cisco.iosxr.iosxr_config:
         lines:
-          - "{{ items }}"
+          - "{{ item }}"
         parents: "prefix-set VRF-CE1A-OSPF2BGP"
-      with_items: "{{ xr_prefix_lists.prefix_sets.VRF_CE1A_OSPF2BGP }}"
+      loop: "{{ xr_prefix_lists.prefix_sets.VRF_CE1A_OSPF2BGP }}"
     
     - name: Configure Prefix-Set VRF-CE2A-OSPF2BGP
       cisco.iosxr.iosxr_config:
         lines:
-          - "{{ items }}"
+          - "{{ item }}"
         parents: "prefix-set VRF-CE2A-OSPF2BGP"
-      with_items: "{{ xr_prefix_lists.prefix_sets.VRF_CE2A_OSPF2BGP }}"
+      loop: "{{ xr_prefix_lists.prefix_sets.VRF_CE2A_OSPF2BGP }}"
