@@ -1,6 +1,8 @@
 prefix_sets:
   VRF_CE1A_OSPF2BGP:
-    - "0.0.0.0/0 le 32"
+    - "8.8.8.8/32"
+    - "exit"
   VRF_CE2A_OSPF2BGP:
     - "9.9.9.9/32,"
     - "123.123.123.123/32"
+    - "exit"
