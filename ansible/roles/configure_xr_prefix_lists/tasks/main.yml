@@ -15,7 +15,9 @@
     - name: Configure Prefix-Set VRF-CE1A-OSPF2BGP
       cisco.iosxr.iosxr_config:
         lines: "{{ CE1A.VRF_CE1A_OSPF2BGP }}"
+        parents: "prefix-set VRF-CE1A-OSPF2BGP"
     
     - name: Configure Prefix-Set VRF-CE2A-OSPF2BGP
       cisco.iosxr.iosxr_config:
         lines: "{{ CE2A.VRF_CE2A_OSPF2BGP }}"
+        parents: "prefix-set VRF-CE2A-OSPF2BGP"
