@@ -5,8 +5,8 @@
 
     - name: Configure Prefix-Set VRF-CE1A-OSPF2BGP
       cisco.iosxr.iosxr_config:
-        src: CE1A.j2
+        src: "vars/CE1A.j2"
     
     - name: Configure Prefix-Set VRF-CE2A-OSPF2BGP
       cisco.iosxr.iosxr_config:
-        src: CE2A.j2
+        src: "vars/CE2A.j2"

@@ -1,3 +1,0 @@
-VRF_CE1A_OSPF2BGP:
-  - "8.8.8.8/32"
-  - "exit"
