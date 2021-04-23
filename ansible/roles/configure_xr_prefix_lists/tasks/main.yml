@@ -2,15 +2,20 @@
 - name: IOS-XR Cores Configuration Tasks
 
   block:
-    - name: Include vars for this role (xr_prefix_lists)
+    - name: Include var for prefix set CE1A (xr_prefix_lists)
       include_vars:
-        file: vars.yml
-        name: xr_prefix_lists
+        file: CE1A.yml
+        name: CE1A
+    
+    - name: Include var for prefix set CE1A (xr_prefix_lists)
+      include_vars:
+        file: CE2A.yml
+        name: CE2A
 
     - name: Configure Prefix-Set VRF-CE1A-OSPF2BGP
       cisco.iosxr.iosxr_config:
-        lines: "{{ xr_prefix_lists.prefix_sets.VRF_CE1A_OSPF2BGP }}"
+        lines: "{{ CE1A.VRF_CE1A_OSPF2BGP }}"
     
     - name: Configure Prefix-Set VRF-CE2A-OSPF2BGP
       cisco.iosxr.iosxr_config:
-        lines: "{{ xr_prefix_lists.prefix_sets.VRF_CE2A_OSPF2BGP }}"
+        lines: "{{ CE2A.VRF_CE2A_OSPF2BGP }}"
