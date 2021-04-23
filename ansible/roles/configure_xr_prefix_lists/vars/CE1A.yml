@@ -1,3 +1,4 @@
 VRF_CE1A_OSPF2BGP:
+  - "prefix-set VRF-CE1A-OSPF2BGP"
   - "8.8.8.8/32"
-  - "exit"
+  - "end-set"
